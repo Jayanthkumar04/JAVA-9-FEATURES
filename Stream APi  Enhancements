@@ -1,7 +1,7 @@
 4 methods introduced==>
 
 takeWhile  --> default method
-doWhile    --> default method
+dropWhile    --> default method
 Iterate    --> static method
 ofNullable --> static method
 
@@ -9,7 +9,7 @@ ofNullable --> static method
                           takeWhile()
 1)untill predicate returns true filtering is done if false it stopss
 
-                          doWhile()
+                          dropWhile()
 1)opp to takeWhile =>it drops elements instead of taking them as long as
 predicate returns true,Once predicate returns false the nrest of stream will be returned
 
