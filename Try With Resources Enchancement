@@ -1,0 +1,33 @@
+1)Try with resources closes all the resources (file,database connection,network connection etc) 
+automatically no need to close them explicitly.This prevents memory leaks
+
+2)With help of try with resource we can reduce unncessary lines of code and makes
+the code more readable
+
+************
+JAVA 9 allows us to declare resouce outside the Try-With-Resource block.We no longer
+need to create local variabel to access the resource.
+
+package com.jay.TryWithResourceEnhancement;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class Example {
+
+	public static void main(String[] args) throws FileNotFoundException {
+
+		FileOutputStream fos = new FileOutputStream("outputfile.txt");
+		try(fos){
+			fos.write("welcome to jays space".getBytes());
+			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		
+		//no need to use finally block
+	}
+
+}
