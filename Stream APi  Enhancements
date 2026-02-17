@@ -1,0 +1,22 @@
+4 methods introduced==>
+
+takeWhile  --> default method
+doWhile    --> default method
+Iterate    --> static method
+ofNullable --> static method
+
+
+                          takeWhile()
+1)untill predicate returns true filtering is done if false it stopss
+
+                          doWhile()
+1)opp to takeWhile =>it drops elements instead of taking them as long as
+predicate returns true,Once predicate returns false the nrest of stream will be returned
+
+                          iterate()
+1)to prevent infinite loops in java 9,another version of iterate() method introduced ,
+which is nothing but 3 arg iterate() method
+
+                          ofNullable()
+ 1)to avoid null pointer exception
+ 2)returns empty stream if null is present
