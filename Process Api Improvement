@@ -1,0 +1,10 @@
+Until java 8 ,communicating with processor/os/machine is very difficult.We requried to write very complex native code and
+we have to ue 3rd pary jar files
+
+To resolve complexity , JDK 9 introduces to process api, we can commicate with os easily
+
+1)get process id of running process
+2)create new process
+3)destry already running process
+4)get process handles for processes
+5)get parent and child proecesses of urnning process
