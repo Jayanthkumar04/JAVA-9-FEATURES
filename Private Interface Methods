@@ -1,0 +1,7 @@
+1)From java 9 private methods are introduced in interfaces
+
+2)They can be both static and non-static
+
+3)advantages==> 1)to reduce code duplications
+                2)improve code encapsulation by hiding implementation details
+
