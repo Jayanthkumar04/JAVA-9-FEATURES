@@ -9,14 +9,112 @@ ofNullable --> static method
                           takeWhile()
 1)untill predicate returns true filtering is done if false it stopss
 
+package com.jay.StreamApiEnhancements;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class TakeWhile {
+
+	public static void main(String args[])
+	{
+		List<Integer> numbers = Arrays.asList(2,4,6,7,8,42,21,1,22);
+		
+	    List<Integer> result=	numbers.stream().filter(n -> n%2 == 0).collect(Collectors.toList());
+	
+	    System.out.println("even numbers "+result);
+	
+	
+	    List<Integer> result2 = numbers.stream().takeWhile(n->n%2 == 0).collect(Collectors.toList());
+	    
+	    System.out.println(result2);
+	
+	    
+		
+	}
+}
+
+
                           dropWhile()
 1)opp to takeWhile =>it drops elements instead of taking them as long as
 predicate returns true,Once predicate returns false the nrest of stream will be returned
+
+package com.jay.StreamApiEnhancements;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class DropWhile {
+
+	public static void main(String[] args) {
+
+       List<Integer> numbers = Arrays.asList(2,4,6,7,8,42,21,1,22);
+		
+	    List<Integer> result=	numbers.stream().filter(n -> n%2 == 0).collect(Collectors.toList());
+	
+	    System.out.println("even numbers "+result);
+	
+	
+	    List<Integer> result2 = numbers.stream().dropWhile(n->n%2 == 0).collect(Collectors.toList());
+	    
+	    System.out.println(result2);
+	
+	}
+
+}
+
 
                           iterate()
 1)to prevent infinite loops in java 9,another version of iterate() method introduced ,
 which is nothing but 3 arg iterate() method
 
+package com.jay.StreamApiEnhancements;
+
+import java.util.stream.Stream;
+
+public class StreamIterator {
+
+	public static void main(String[] args) {
+
+		//before java 9
+		Stream.iterate(1, x->x+1).limit(10).forEach(System.out::print);
+	
+		//new enhancement in java 9
+		
+		System.out.println();
+		
+		Stream.iterate(1, x->x<8, x->x+1).forEach(System.out::print);
+	
+		
+		
+	}
+
+}
+
+
                           ofNullable()
  1)to avoid null pointer exception
  2)returns empty stream if null is present
+
+
+package com.jay.StreamApiEnhancements;
+
+import java.util.stream.Stream;
+
+public class OfNullable {
+
+	public static void main(String[] args) {
+
+		Stream<String> stream = Stream.ofNullable(null);
+		
+		stream.forEach(str->System.out.println("empty"+str));
+		
+		Stream<String> stream1 = Stream.ofNullable("spring boot");
+
+		stream1.forEach(System.out::println);
+
+	}
+
+}
