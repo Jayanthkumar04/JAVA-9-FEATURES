@@ -1,0 +1,29 @@
+1)includes static factory methods for List,Set and Map interface
+
+2)Userfull for creating small number of collection
+
+var list = new ArrayList<>();
+
+list.add("SPRING BOOT");
+
+list.add("microservices"); list.add("DOCKER");
+
+===>SIMPLIFIES========>
+
+List<String> list  =list.of("Spring boot","microservices","docker");
+
+list.stream().forEach(System.out::println);
+===================================================================
+==>These are immutable objects ,cant be modified-->
+List.of()
+Set.of()
+Map.of()
+====================================================================
+Map<Integer,String> map = Map.of(101,"a",102,"b",103,"c");
+
+map.forEach((k,v)->sysout("key "+k+"value "+v));
+
+
+Map.ofEntries(entry(101,"a"),entry(102,"b"),entry(103,"c"));
+
+=================================================================
