@@ -5,3 +5,43 @@
 3)advantages==> 1)to reduce code duplications
                 2)improve code encapsulation by hiding implementation details
 
+
+
+package com.jay.privateMethods;
+
+public interface Bank {
+
+	
+	public double getBalance();
+	
+	public void withdraw(double amount);
+	
+	public void deposit(double amount);
+	
+	
+    default void executeTransaction(String type,double amount)
+	{
+		if(type.equals("DEPOSIT"))
+		{
+			deposit(amount);
+			logTransactions(type, amount);
+				}else if(type.equals("WITHDRAW")) {
+			withdraw(amount);
+			logTransactions(type, amount);
+				}else {
+			System.out.println("invalid transaction");
+		}
+	}
+    
+    private void logTransactions(String type,Double amount)
+    {
+    	System.out.println("TRANSACTION :"+type);
+		System.out.println("AMOUNT      :"+amount);
+		System.out.println("CURR BALANCE:"+getBalance());
+
+    }
+	
+	
+}
+
+
