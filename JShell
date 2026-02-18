@@ -1,0 +1,33 @@
+1)known as interactive tool
+2)its java's own REPL tool
+
+3)Read Evaluate Print Loop
+
+4)Used for testing small code snippets
+
+5)it can be done without creating class structure
+
+jshell -version
+
+jshell (shell starts)
+
+//These are by default imports
+
+jshell> /imports
+|    import java.io.*
+|    import java.math.*
+|    import java.net.*
+|    import java.nio.file.*
+|    import java.util.*
+|    import java.util.concurrent.*
+|    import java.util.function.*
+|    import java.util.prefs.*
+|    import java.util.regex.*
+|    import java.util.stream.*
+
+
+//To Exit
+
+/exit
+
+                              
